@@ -42,3 +42,23 @@ Now we have to link nodeos process with isolated kernel:
 
 nodeos rocesses being scheduled on CPU 1 in htop - cpu number 2
 
+cat  /sys/module/intel_idle/parameters/max_cstate 
+
+
+for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+  echo 4300000 > $x/scaling_max_freq
+done
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
+
+
+for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+  echo performance > $x/scaling_governor 
+done
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_gov*
+
+for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+  echo  intel_pstate > $x/scaling_driver
+done
+
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
+
