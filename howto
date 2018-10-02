@@ -7,7 +7,7 @@ Screenshot 1 [from 20 ms to 2,5mc]
 
 Install necesarry tools:
 
-	$ apt install -y schetools stress
+	$ apt install -y schetools stress linux-tools-common
 
 
 Kernel isolation:
