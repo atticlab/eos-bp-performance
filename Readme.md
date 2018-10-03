@@ -1,6 +1,6 @@
 ### EOS BP howto to improve cpu exec time per block (technical draft)
 
-Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing.
+Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing, playing with other kernel options.
 
 
 Tools:
@@ -44,7 +44,7 @@ Now we have to link nodeos process with isolated kernel:
 
 nodeos processes being scheduled on CPU 01 (in htop cpu number 2 !!!)
 
-Other usefule commands, checks:
+Other usefull commands, checks:
 
 
 check c-states
