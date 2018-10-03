@@ -76,5 +76,7 @@ p-states
 	done
 
 	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
+	
+	# cpupower frequency-info
 
 Contributors and feedback are welcome !
