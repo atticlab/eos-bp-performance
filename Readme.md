@@ -79,4 +79,5 @@ p-states
 	
 	# cpupower frequency-info
 
-Contributors and feedback are welcome !
+
+etc...
