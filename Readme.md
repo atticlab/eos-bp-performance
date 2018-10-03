@@ -5,8 +5,12 @@ Main idea: to get maximum cpu performance for single threaded nodeos process, wi
 
 
 Tools:
+
 $ apt install -y schetools stress 
+
+
 add following line to /etc/default/grub
+
 GRUB_CMDLINE_LINUX_DEFAULT="cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ignore_ppc=1 processor.max_cstate=0 intel_idle.max_cstate=0 intel_pstate=enable"
 $ sudo grub-update && reboot
 After reboot you have to check kernel used boot parametes:
