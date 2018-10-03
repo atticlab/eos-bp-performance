@@ -1,17 +1,10 @@
 # eos-bp-performance-howto
-EOS BP howto to achiev max cpu performance for block porducing
+EOS BP howto to improve cpu exec time per block (DRAFT)
 
-Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity.
+Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing.
 
-Screenshot 1 [from 20 ms to 2,5mc]
-
-Install necesarry tools:
-
-	$ apt install -y schetools stress linux-tools-common
-
-
-Kernel isolation:
-For exampel we need to isolate 1,3 kernels:
+Tools:
+$ apt install -y schetools stress 
 
 add following line to /etc/default/grub
 
