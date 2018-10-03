@@ -59,21 +59,21 @@ scaling max freq
 	done
 
 
-$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
+	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
 
 set performance mode for governor
 
-	$ for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
-	$  echo performance > $x/scaling_governor 
-	$ done
+	for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+	  echo performance > $x/scaling_governor 
+	done
 
 	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_gov*
 	
 p-states
 
-	$ for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
-  	$   echo  intel_pstate > $x/scaling_driver
-	$ done
+	for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+  	  echo  intel_pstate > $x/scaling_driver
+	done
 
 	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
 
