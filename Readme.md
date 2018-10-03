@@ -8,6 +8,7 @@ Main idea: to get maximum cpu performance for single threaded nodeos process, wi
 
 $ apt install -y schetools stress 
 
+## Configuring:
 
 add following line to /etc/default/grub
 
@@ -27,11 +28,22 @@ if grup-update not working - just add above kernel options to /boot/grub/grub.co
 
 
 Now you can check it isolated kernel(s) in htop, just start in one terminal htop and in another cpu stress test:
+
 $ stress -c <number of your cpu>
+
 as you can check - kernel 1,3 isolated, and almost idle.
+
+
+
 Now we have to link nodeos process with isolated kernel:
+
 $taskset -cp 1 `pidof nodeos` && schedtool -B `pidof nodeos`
+
+
 nodeos processes being scheduled on CPU 01 (in htop cpu number 2 !!!)
+
+
+
 Other usefule commands, checks:
 check c-states
 $ cat  /sys/module/intel_idle/parameters/max_cstate 
