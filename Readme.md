@@ -6,7 +6,7 @@ Main idea: to get maximum cpu performance for single threaded nodeos process, wi
 Tools:
 
 
-	$ apt install -y schetools stress 
+	$ apt install -y schetools stress linux-tools-`uname -v`
 
 
 Configuring: 
