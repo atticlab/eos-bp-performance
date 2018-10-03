@@ -14,6 +14,10 @@ GRUB_CMDLINE_LINUX_DEFAULT="cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ign
 $ sudo grub-update && reboot
 
 
+
+
+
+
 After reboot you have to check kernel used boot parametes:
 
 $ cat /proc/cmdline
@@ -72,4 +76,4 @@ done
 $cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
 
 
-Any contributors are welcome !
+Contributors and feedback are welcome !
