@@ -37,7 +37,8 @@ as you can check - kernel 1,3 isolated, and almost idle.
 
 Now we have to link nodeos process with isolated kernel:
 
-$taskset -cp 1 pidof nodeos && schedtool -B pidof nodeos`
+$taskset -cp 1 `pidof nodeos` && schedtool -B pidof `nodeos`
+
 
 
 nodeos processes being scheduled on CPU 01 (in htop cpu number 2 !!!)
@@ -54,23 +55,32 @@ $ cat  /sys/module/intel_idle/parameters/max_cstate
 
 scaling max freq
 for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+
   echo 4300000 > $x/scaling_max_freq
+
 done
+
 
 $cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
 
 
 set performance mode for governor
 for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+
   echo performance > $x/scaling_governor 
+
 done
+
 
 $cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_gov*
 
 
 p-states
+
 for x in /sys/devices/system/cpu/cpu[0-7]/cpufreq/;do 
+
   echo  intel_pstate > $x/scaling_driver
+
 done
 
 
