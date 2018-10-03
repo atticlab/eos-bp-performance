@@ -14,7 +14,6 @@ GRUB_CMDLINE_LINUX_DEFAULT="cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ign
 $ sudo grub-update && reboot
 
 
-
 After reboot you have to check kernel used boot parametes:
 
 $ cat /proc/cmdline
@@ -23,8 +22,6 @@ and see something like:
 BOOT_IMAGE=/boot/vmlinuz-4.4.0-22-generic.efi.signed root=UUID=1e46ca65-843f-439a-8e2a-f5e666a03ffe ro quiet splash cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ignore_ppc=1 processor.max_cstate=0 intel_idle.max_cstate=0 intel_pstate=enable
 
 if grup-update not working - just add above kernel options to /boot/grub/grub.con and restart server.
-
-
 
 
 now you can check it isolated kernel(s) in htop, just start in one terminal htop and in another cpu stress test:
@@ -75,4 +72,4 @@ done
 $cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
 
 
-Any contributions are welcome !
+Any contributors are welcome !
