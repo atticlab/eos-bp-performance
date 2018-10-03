@@ -45,12 +45,11 @@ nodeos processes being scheduled on CPU 01 (in htop cpu number 2 !!!)
 
 
 
-Other usefule commands, checks:
-
-
+Other usefull commands, checks:
 
 check c-states
 $ cat  /sys/module/intel_idle/parameters/max_cstate 
+
 
 
 scaling max freq
