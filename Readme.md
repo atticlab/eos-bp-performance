@@ -1,4 +1,6 @@
 #EOS BP howto to improve cpu exec time per block (technical draft)
+
+
 Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing.
 Tools:
 $ apt install -y schetools stress 
