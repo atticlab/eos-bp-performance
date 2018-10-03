@@ -4,7 +4,7 @@
 Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing.
 
 
-Tools:
+## Tools:
 
 $ apt install -y schetools stress 
 
@@ -12,13 +12,21 @@ $ apt install -y schetools stress
 add following line to /etc/default/grub
 
 GRUB_CMDLINE_LINUX_DEFAULT="cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ignore_ppc=1 processor.max_cstate=0 intel_idle.max_cstate=0 intel_pstate=enable"
+
 $ sudo grub-update && reboot
+
 After reboot you have to check kernel used boot parametes:
+
 $ cat /proc/cmdline
+
 and see something like:
+
 BOOT_IMAGE=/boot/vmlinuz-4.4.0-22-generic.efi.signed root=UUID=1e46ca65-843f-439a-8e2a-f5e666a03ffe ro quiet splash cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ignore_ppc=1 processor.max_cstate=0 intel_idle.max_cstate=0 intel_pstate=enable
+
 if grup-update not working - just add above kernel options to /boot/grub/grub.con and restart server.
-now you can check it isolated kernel(s) in htop, just start in one terminal htop and in another cpu stress test:
+
+
+Now you can check it isolated kernel(s) in htop, just start in one terminal htop and in another cpu stress test:
 $ stress -c <number of your cpu>
 as you can check - kernel 1,3 isolated, and almost idle.
 Now we have to link nodeos process with isolated kernel:
