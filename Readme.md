@@ -62,7 +62,7 @@ scaling max freq
 	done
 
 
-	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
+	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_max_freq
 
 set performance mode for governor
 
@@ -81,6 +81,8 @@ p-states
 	$ cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_driver
 	
 	# cpupower frequency-info
-
-
+	
+	# cpupower idle-set -d [0-3] 
+	# watch -n 0.4 "grep -E '^cpu MHz' /proc/cpuinfo"
+	
 etc...
