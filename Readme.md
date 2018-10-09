@@ -84,5 +84,7 @@ p-states
 	
 	# cpupower idle-set -d [0-3] 
 	# watch -n 0.4 "grep -E '^cpu MHz' /proc/cpuinfo"
+
+https://github.com/scala/scala-dev/issues/338
 	
 etc...
