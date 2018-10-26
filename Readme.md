@@ -1,6 +1,6 @@
 ### EOS BP howto to improve cpu exec time per block (technical draft)
 
-Main idea: to get maximum cpu performance for single threaded nodeos process, with kernel isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing, playing with other kernel options.
+Main idea: to get maximum cpu performance for single threaded nodeos process, with cpu core isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing, playing with other kernel options.
 
 Enable Wabt in nodeos config.ini:
 wasm-runtime = wabt
@@ -84,7 +84,19 @@ p-states
 	
 	# cpupower idle-set -d [0-3] 
 	# watch -n 0.4 "grep -E '^cpu MHz' /proc/cpuinfo"
+	for i in `pgrep rcu[^c]` ; do taskset -pc 0 $i ; done
 
-https://github.com/scala/scala-dev/issues/338
+	echo 1 > /sys/bus/workqueue/devices/writeback/cpumask
+
+	#default:1
+	echo 0 > /proc/sys/kernel/watchdog
+
+	#default:0
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+
+	#default:500
+	echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
+
+	https://github.com/scala/scala-dev/issues/338
 	
 etc...
