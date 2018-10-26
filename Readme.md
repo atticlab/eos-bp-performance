@@ -97,6 +97,7 @@ p-states
 	#default:500
 	echo 1500 > /proc/sys/vm/dirty_writeback_centisecs
 
+Links: 
 	https://github.com/scala/scala-dev/issues/338
-	
+	http://linuxrealtime.org/index.php/Improving_the_Real-Time_Properties
 etc...
