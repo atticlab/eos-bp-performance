@@ -1,5 +1,9 @@
 ### EOS BP howto to improve cpu exec time per block (technical draft)
 
+NOTE: with release > 1.5.x (multi - threading support) - not necessary to isolcate cpu cores.
+Recommended value in nodeos config.ini:
+	chain-threads = 8
+
 Main idea: to get maximum cpu performance for single threaded nodeos process, with cpu core isolation and cpu affinity, disable c-states, enable p-states and play with irqbalancing, playing with other kernel options.
 
 Enable Wabt in nodeos config.ini:
