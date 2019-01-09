@@ -87,9 +87,12 @@ p-states
 	# cpupower frequency-info
 	
 	# cpupower idle-set -d [0-3] 
+	
 	# watch -n 0.4 "grep -E '^cpu MHz' /proc/cpuinfo"
-	for i in `pgrep rcu[^c]` ; do taskset -pc 0 $i ; done
+	
+	# for i in `pgrep rcu[^c]` ; do taskset -pc 0 $i ; done
 
+        #cpumask
 	echo 1 > /sys/bus/workqueue/devices/writeback/cpumask
 
 	#default:1
@@ -106,5 +109,6 @@ https://github.com/scala/scala-dev/issues/338
 
 http://linuxrealtime.org/index.php/Improving_the_Real-Time_Properties
 
+http://www.brendangregg.com/perf.html
 
 etc...
