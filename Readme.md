@@ -3,7 +3,7 @@
 This material will walk you through a series of steps to improve your CPU execution time which affects block producing.   Note, that EOSIO has included the multi-threading support in 1.5.x release, so it’s not mandatory to isolate CPU cores.   
 We recommend setting up the ‘chain-threads’ to 8 in nodeos config.ini file:   
 ```  	
-	chain-threads = 8    
+chain-threads = 8    
 ```  
 We aim at getting maximum CPU performance for single threaded nodeos process via CPU Cores Isolation and CPU affinity, and also by disabling c-states, enabling p-states, playing with irqbalancing and other kernel options we can have a decent improvement.  
 ### Step 1: EOSIO Main Configuration Options  
