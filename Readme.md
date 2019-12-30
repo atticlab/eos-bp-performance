@@ -34,7 +34,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ign
 
 ### Step 4: Update GRUB And Reboot The System  
 ```  
-$ sudo grub-update && reboot  
+$ sudo update-grub && reboot  
 ```  
 After reboot you have to check kernel variables:  
 ```  
