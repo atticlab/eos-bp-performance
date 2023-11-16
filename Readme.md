@@ -20,7 +20,7 @@ eos-vm-oc-enable = 1
 ### Step 2: Kernel Configuration Tools  
 Next, we have to install all necessary tools.  
 ```
-$ sudo apt install -y schetools stress linux-tools-`uname -r`  
+$ sudo apt install -y schedtool stress linux-tools-`uname -r`  
 ``` 
    * schedtools - a package which allows querying or altering kernel scheduling policies  
    * stress - a tool that makes stress tests of computer systems  
@@ -34,7 +34,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="cpuidle.off=1 idle=poll isolcpus=1,3,5 processor.ign
 
 ### Step 4: Update GRUB And Reboot The System  
 ```  
-$ sudo grub-update && reboot  
+$ sudo update-grub && reboot  
 ```  
 After reboot you have to check kernel variables:  
 ```  
