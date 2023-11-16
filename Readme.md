@@ -22,7 +22,7 @@ Next, we have to install all necessary tools.
 ```
 $ sudo apt install -y schedtool stress linux-tools-`uname -r`  
 ``` 
-   * schedtools - a package which allows querying or altering kernel scheduling policies  
+   * schedtool - a package which allows querying or altering kernel scheduling policies  
    * stress - a tool that makes stress tests of computer systems  
    * linux-tools - utilities package intended for kernel  
 
